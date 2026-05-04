@@ -1,0 +1,38 @@
+body {
+    background: #edf0f5;
+    font-family: Arial;
+}
+
+/* Topbar */
+.topbar {
+    background: #3b5998;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Facebook logo */
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+/* Create account heading */
+.create-title {
+    color: #3b5998;   /* navy blue */
+}
+
+/* Small text */
+.small-text {
+    font-size: 12px;
+}
+
+/* Left box */
+.left-box {
+    background: #fff;
+    padding: 15px;
+}
+
+/* Terms */
+.terms {
+    font-size: 12px;
+}

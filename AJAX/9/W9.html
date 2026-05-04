@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather App</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    margin-top: 40px;
+}
+.box{
+    border:1px solid #ccc;
+    padding:20px;
+    width:250px;
+    margin:auto;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Weather Application</h2>
+
+<input type="text" id="city" placeholder="Enter city name">
+<button onclick="getWeather()">Search</button>
+
+<div class="box" id="result"></div>
+
+<script>
+
+function getWeather(){
+
+    let city = document.getElementById("city").value.toLowerCase();
+
+    // AJAX call using fetch
+    fetch("data.json")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+
+        if(city && data[city]){
+            let w = data[city];
+
+            document.getElementById("result").innerHTML =
+                "<b>Temperature:</b> " + w.temp + "<br>" +
+                "<b>Humidity:</b> " + w.humidity + "<br>" +
+                "<b>Condition:</b> " + w.condition;
+        }
+        else{
+            document.getElementById("result").innerHTML = "City not found";
+        }
+
+    })
+    .catch(function(){
+        document.getElementById("result").innerHTML = "Error loading data";
+    });
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather App</title>
+
+<style>
+body{font-family:Arial;text-align:center;margin-top:40px;}
+.box{border:1px solid #ccc;padding:20px;width:250px;margin:auto;margin-top:15px;}
+</style>
+</head>
+
+<body>
+
+<h2>Weather Application (AJAX)</h2>
+
+<input type="text" id="city" placeholder="Enter city name">
+<button onclick="getWeather()">Search</button>
+
+<div class="box" id="result"></div>
+
+<script>
+
+// local repository (map)
+let weatherData = {
+    pune:{temp:"30°C", humidity:"60%", condition:"Sunny"},
+    mumbai:{temp:"32°C", humidity:"70%", condition:"Humid"},
+    delhi:{temp:"35°C", humidity:"40%", condition:"Hot"}
+};
+
+// AJAX using XMLHttpRequest
+function getWeather(){
+
+    let city = document.getElementById("city").value.toLowerCase();
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "data.json", true); // dummy request (AJAX simulation)
+
+    xhr.onload = function(){
+
+        // simulate fetching from local map
+        if(city && weatherData[city]){
+            let w = weatherData[city];
+
+            document.getElementById("result").innerHTML =
+                "<b>Temperature:</b> " + w.temp + "<br>" +
+                "<b>Humidity:</b> " + w.humidity + "<br>" +
+                "<b>Condition:</b> " + w.condition;
+        }
+        else{
+            document.getElementById("result").innerHTML = "City not found";
+        }
+
+    };
+
+    xhr.send();
+}
+
+</script>
+
+</body>
+</html> -->

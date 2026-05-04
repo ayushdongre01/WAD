@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            .card{
+                display: inline-block;
+                padding: 10px;
+                margin:10px;
+                border:1px solid black;
+            }
+            img{
+                width:100px;
+                height:100px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Employees</h2>
+        <button onclick="loadEmployees()">Load Employees</button>
+        <div id="container"></div>
+
+        <script>
+            function loadEmployees(){
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "/employees", true);
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState === 4 && xhr.status === 200){
+                        var users = JSON.parse(xhr.responseText);
+                        var employees = document.getElementById('container');
+                        employees.innerHTML = "";
+                        users.forEach(user=>{
+                            employees.innerHTML += `
+                            <div class="card">
+                                <img src="${user.profile}">
+                                <p>Name - ${user.name}</p>
+                                <p>Designation - ${user.designation}</p>
+                                <p>Department - ${user.department}</p>
+                                <p>Salary - ${user.salary}</p>
+                            </div>
+                            `;
+                        });
+                    }
+                }
+                xhr.send();
+            }
+
+        </script>
+    </body>
+</html>

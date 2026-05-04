@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Ayush",
+        "designation":"SDE1",
+        "department":"IT",
+        "salary":"$4000",
+        "profile":"iron.jpg"
+    },
+    {
+        "name": "Ron",
+        "designation":"SDE2",
+        "department":"IT",
+        "salary":"$3000",
+        "profile":"iron.jpg"
+    }
+]

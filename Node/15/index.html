@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Catalog</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 180px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Product Catalog</h2>
+
+<button onclick="loadProducts()">Load Products</button>
+
+<div id="container"></div>
+
+<script>
+function loadProducts() {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "/products", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var products = JSON.parse(xhr.responseText);
+            var container = document.getElementById("container");
+
+            container.innerHTML = "";
+
+            products.forEach(product => {
+                container.innerHTML += `
+                    <div class="card">
+                        <img src="${product.image}">
+                        <p>Name: ${product.name}</p>
+                        <p>Price: ₹${product.price}</p>
+                    </div>
+                `;
+            });
+        }
+    };
+
+    xhr.send();
+}
+
+// function loadProducts() {
+
+//     fetch("/products")
+//         .then(response => response.json())
+//         .then(products => {
+
+//             var container = document.getElementById("container");
+//             container.innerHTML = "";
+
+//             products.forEach(product => {
+//                 container.innerHTML += `
+//                     <div class="card">
+//                         <img src="${product.image}">
+//                         <p>Name: ${product.name}</p>
+//                         <p>Price: ₹${product.price}</p>
+//                     </div>
+//                 `;
+//             });
+
+//         })
+//         .catch(error => {
+//             console.log("Error loading products:", error);
+//         });
+// }
+</script>
+
+</body>
+</html>

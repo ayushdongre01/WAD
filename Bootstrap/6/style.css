@@ -1,0 +1,39 @@
+body {
+    background: #f4f4f4;
+}
+
+/* Cards */
+.card {
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+ul{
+    list-style: none;
+    text-align: center;
+}
+
+/* li{
+    display: inline-block;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin:5px;
+} */
+
+img{
+    height:300px;
+    width:200px;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+}

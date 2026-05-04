@@ -1,0 +1,73 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    /* light background */
+}
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Sections (Card Style) */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+/* Hover effect */
+section:hover {
+    transform: scale(1.02);
+}
+
+ul {
+    list-style: none;      /* remove bullets */
+    padding: 0;
+}
+
+li {
+    background: #333;
+    color: white;
+    display: inline-block;   /* makes tags */
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Headings */
+h2 {
+    color: #333;
+    border-left: 5px solid #333;
+    padding-left: 10px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        margin: 10px;
+    }
+}

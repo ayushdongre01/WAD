@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>My Page</title>
+    </head>
+
+    <body>
+
+        <div class="container mt-5">
+            <div class="form-box">
+                <h2 class="text-center">Event Registration</h2>
+                <form class="needs-validation" novalidate action="">
+                    <div class="form-floating mb-3">
+                        
+                        <input class="form-control" type="text" id="name" placeholder="Name" required data-bs-toggle="tooltip" title="Enter full name">
+                        <label for="name">Full Name</label>
+                        <div class="invalid-feedback">Name is required.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        
+                        <input class="form-control" type="email" id="email" placeholder="xyz@gmail.com" required data-bs-toggle="tooltip" title="Enter your email">
+                        <label for="email">Email</label>
+                        <div class="invalid-feedback">Email is required.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        
+                        <input class="form-control" type="tel" id="phone" placeholder="980xxx" required data-bs-toggle="tooltip" title="Enter your phone no.">
+                        <label for="phone">Phone</label>
+                        <div class="invalid-feedback">Phone no. is required.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        
+                        <select class="form-select" name="" required id="">
+                            <option value="">Select</option>
+                            <option value="">Hackathon</option>
+                            <option value="">Competitive Programming</option>
+                            <option value="">Treasure Hunt</option>
+                        </select>
+                        <label for="event">Event type</label>
+                        <div class="invalid-feedback">Event type is required.</div>
+                    </div>
+
+                    <button class="btn btn-primary w-100">Register</button>
+                </form>
+            </div>
+        </div>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

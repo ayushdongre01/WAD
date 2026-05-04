@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Store</title>
+<style>
+body { text-align:center; font-family:Arial; background:#f2f2f2; }
+button { padding:10px; margin:5px; background:black; color:white; border:none; }
+input { padding:8px; margin:5px; }
+form { margin:15px; }
+</style>
+</head>
+<body>
+
+<h1>📚 Online Bookstore</h1>
+
+<button onclick="location.href='/all'">View All Books</button>
+
+<h3>Add Book</h3>
+<form action="/add" method="POST">
+<input name="title" placeholder="Title" required>
+<input name="author" placeholder="Author" required>
+<input name="price" placeholder="Price" required>
+<input name="genre" placeholder="Genre" required>
+<button type="submit">Add</button>
+</form>
+
+<h3>Update Book</h3>
+<form action="/update" method="POST">
+<input name="oldTitle" placeholder="Old Title" required>
+<input name="title" placeholder="New Title">
+<input name="author" placeholder="Author">
+<input name="price" placeholder="Price">
+<input name="genre" placeholder="Genre">
+<button type="submit">Update</button>
+</form>
+
+<h3>Delete Book</h3>
+<input id="delTitle" placeholder="Title">
+<button onclick="deleteBook()">Delete</button>
+
+<script>
+function deleteBook(){
+    let title = document.getElementById("delTitle").value;
+    window.location.href = "/delete/" + title;
+}
+</script>
+
+</body>
+</html>

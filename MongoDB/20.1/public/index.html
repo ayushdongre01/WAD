@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="location.href='/all'">View Table</button>
+    <form action="/add" method="POST">
+        <input name="Name" type="text" placeholder="Name">
+        <input name="Department" type="text" placeholder="Department">
+        <input name="Designation" type="text" placeholder="Designation">
+        <input name="Salary" type="text" placeholder="Salary">
+        <input name="joiningDate" type="date" placeholder="Joining Date">
+        <button>Add</button>
+    </form>
+
+    <form action="/update" method="POST">
+        <input name="oldname" type="text" placeholder="Old Name">
+        <input name="Name" type="text" placeholder="Name">
+        <input name="Department" type="text" placeholder="Department">
+        <input name="Designation" type="text" placeholder="Designation">
+        <input name="Salary" type="text" placeholder="Salary">
+        <input name="joiningDate" type="date" placeholder="Joining Date">
+        <button>Update</button>
+    </form>
+
+    <input type="text" placeholder="Name" id="nam">
+    <button onclick="del()">Delete</button>
+
+    <script>
+        function del(){
+            const name = document.getElementById('nam').value;
+            location.href = "/del/"+name;
+        }
+    </script>
+</body>
+</html>

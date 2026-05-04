@@ -1,0 +1,24 @@
+body{
+    font-family: Arial;
+    background: #f4f4f4;
+    text-align: center;
+    margin-top: 20px;
+}
+
+button{
+    margin:auto;
+    padding:10px;
+}
+
+ul{
+    padding:10px;
+}
+
+li{
+    
+    margin:10px;
+}
+
+#taskname{
+    padding:10px;
+}

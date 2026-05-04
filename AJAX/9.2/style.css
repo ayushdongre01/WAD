@@ -1,0 +1,21 @@
+body{
+    background: rgb(163, 163, 213)violet;
+    text-align: center;
+    font-family: Arial;
+    margin-top: 100px;
+}
+
+.container{
+    background: #f4f4f4;
+    border-radius: 5px;
+    padding:25px;
+    width: 300px;
+    margin:auto;
+}
+
+button{
+    background: rgb(64, 192, 64);
+    border-radius: 5px;
+    padding:5px;
+    margin: 4px;
+}

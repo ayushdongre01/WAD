@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Directory</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Employee Directory</h2>
+
+<button onclick="loadEmployees()">Load Employees</button>
+
+<div id="employees"></div>
+
+<script>
+function loadEmployees() {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "/employees", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var data = JSON.parse(xhr.responseText);
+            var container = document.getElementById("employees");
+
+            container.innerHTML = "";
+
+            data.forEach(emp => {
+                container.innerHTML += `
+                    <div class="card">
+                        <img src="${emp.image}">
+                        <p>Name: ${emp.name}</p>
+                        <p>Designation: ${emp.designation}</p>
+                        <p>Department: ${emp.department}</p>
+                        <p>Salary: ${emp.salary}</p>
+                    </div>
+                `;
+            });
+        }
+    };
+
+    xhr.send();
+}
+</script>
+
+</body>
+</html>

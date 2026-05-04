@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        li {
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User List</h2>
+
+<button onclick="loadUsers()">Load Users</button>
+
+<ul id="userList"></ul>
+
+<script>
+function loadUsers() {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "/users", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var users = JSON.parse(xhr.responseText);
+
+            var list = document.getElementById("userList");
+            list.innerHTML = "";
+
+            users.forEach(user => {
+                list.innerHTML += "<li>" + user.name + " - " + user.email + "</li>";
+            });
+        }
+    };
+
+    xhr.send();
+}
+</script>
+
+</body>
+</html>

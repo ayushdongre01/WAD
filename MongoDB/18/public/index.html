@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Song App</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            background: black;
+            color: white;
+            border: none;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        form {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎵 Song Management System</h1>
+
+    <button onclick="location.href='/insert'">Insert Songs</button>
+    <button onclick="location.href='/all'">Show All</button>
+
+    <!-- ADD SONG -->
+    <h3>Add Song</h3>
+    <form action="/add" method="POST">
+        <input name="Songname" placeholder="Song Name" required>
+        <input name="Film" placeholder="Film" required>
+        <input name="Music_director" placeholder="Director" required>
+        <input name="singer" placeholder="Singer" required>
+        <button type="submit">Add Song</button>
+    </form>
+
+    <!-- UPDATE -->
+    <h3>Update Actor & Actress</h3>
+    <form action="/update" method="POST">
+        <input name="Songname" placeholder="Song Name" required>
+        <input name="Actor" placeholder="Actor" required>
+        <input name="Actress" placeholder="Actress" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <!-- SEARCH -->
+    <h3>Search by Director</h3>
+    <input id="dir"><button onclick="searchDirector()">Search</button>
+
+    <h3>Director + Singer</h3>
+    <input id="d"><input id="s"><button onclick="ds()">Search</button>
+
+    <h3>Delete Song</h3>
+    <input id="del"><button onclick="del()">Delete</button>
+
+    <h3>Singer + Film</h3>
+    <input id="si"><input id="fi"><button onclick="filter()">Search</button>
+    <script>
+        function searchDirector() {
+            let val = document.getElementById("dir").value;
+            location.href = "/director/" + val;
+        }
+
+        function ds() {
+            let d = document.getElementById("d").value;
+            let s = document.getElementById("s").value;
+            location.href = "/director-singer/" + d + "/" + s;
+        }
+
+        function del() {
+            let val = document.getElementById("del").value;
+            location.href = "/delete/" + val;
+        }
+
+        function filter() {
+            let si = document.getElementById("si").value;
+            let fi = document.getElementById("fi").value;
+            location.href = "/filter/" + si + "/" + fi;
+        }
+    </script>
+
+</body>
+
+</html>

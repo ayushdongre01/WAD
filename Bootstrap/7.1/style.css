@@ -1,0 +1,13 @@
+body{
+    background: #fff;
+}
+
+.title{
+    color:#fff;
+}
+
+.navb{
+    background:rgb(64, 64, 173);
+    color:#fff;
+    padding: 10px 20px;
+}

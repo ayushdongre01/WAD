@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Song Management System</h2>
+    <button onclick="location.href='/insert'">Insert</button>
+    <button onclick="location.href='/all'">View All</button>
+
+    <h3>Add song</h3>
+    <form action="/add" method="POST">
+        <input name="Songname" type="text" placeholder="Song name" id="Songname">
+        <input name="Film" type="text" placeholder="Film name" id="Film">
+        <input name="Music_director" type="text" placeholder="Music director name" id="Music_director">
+        <input name="singer" type="text" placeholder="Singer" id="singer">
+        <button>Add</button>
+    </form>
+
+    <h3>Add actor and actress</h3>
+    <form action="/update" method="POST">
+        <input name="Songname" type="text" placeholder="Song name" id="Songname">
+        <input name="Actor" type="text" placeholder="Actor name" id="Actor">
+        <input name="Actress" type="text" placeholder="Actress name" id="Actress">
+        <button>Update</button>
+    </form>
+
+    <h3>Search by director</h3>
+    <input type="text" placeholder="Music director name" id="dir">
+    <button onclick="searchDirector()">Search</button>
+
+    <h3>Search by director and singer</h3>
+    <input type="text" placeholder="Music director name" id="dire">
+    <input type="text" placeholder="Singer name" id="sing">
+    <button onclick="searchDirectorSinger()">Search</button>
+
+    <h3>Search by film and singer</h3>
+    <input type="text" placeholder="Film name" id="film">
+    <input type="text" placeholder="Singer name" id="singe">
+    <button onclick="searchSingerFilm()">Search</button>
+
+    <h3>Delete a song</h3>
+    <input type="text" placeholder="Song name" id="songname">
+    <button onclick="delsong()">Search</button>
+
+    <script>
+        function searchDirector(){
+            const dirname = document.getElementById('dir').value;
+            location.href = "/director/"+dirname;
+        }
+
+        function searchDirectorSinger(){
+            const dirname = document.getElementById('dire').value;
+            const singername = document.getElementById('sing').value;
+            location.href = "/dir-sig/"+dirname + "/"+singername;
+        }
+
+        function searchSingerFilm(){
+            const filmname = document.getElementById('film').value;
+            const singername = document.getElementById('singe').value;
+            location.href = "/sigfil/"+singername + "/"+filmname;
+        }
+
+        function delsong(){
+            const songname = document.getElementById('songname').value;
+            location.href = "/del/"+songname;
+        }
+    </script>
+</body>
+</html>

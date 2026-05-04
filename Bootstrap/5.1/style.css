@@ -1,0 +1,23 @@
+body{
+    background: #f4f4f4;
+}
+
+.badge-custom{
+    background: gold;
+    color: white;
+    position: absolute;
+    top:10px;
+    left:10px;
+}
+
+.badge-custom2{
+    background: rgb(30, 147, 30);
+    color: white;
+    position: absolute;
+    top:10px;
+    left:10px;
+}
+
+h5{
+    cursor: pointer;
+}

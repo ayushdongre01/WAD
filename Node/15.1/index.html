@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Catalog</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 180px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Product Catalog</h2>
+
+<!-- Input Form -->
+<input type="text" id="name" placeholder="Product Name">
+<input type="text" id="price" placeholder="Price">
+<input type="text" id="image" placeholder="Image name (e.g. product1.jpg)">
+<br>
+<button onclick="addProduct()">Add Product</button>
+
+<br><br>
+<button onclick="loadProducts()">Load Products</button>
+
+<div id="container"></div>
+
+<script>
+
+// GET (Fetch products)
+function loadProducts() {
+    fetch("/products")
+        .then(res => res.json())
+        .then(products => {
+
+            let container = document.getElementById("container");
+            container.innerHTML = "";
+
+            products.forEach(product => {
+                container.innerHTML += `
+                    <div class="card">
+                        <img src="${product.image}">
+                        <p>Name: ${product.name}</p>
+                        <p>Price: ₹${product.price}</p>
+                    </div>
+                `;
+            });
+        });
+}
+
+// POST (Add product)
+function addProduct() {
+
+    let name = document.getElementById("name").value;
+    let price = document.getElementById("price").value;
+    let image = document.getElementById("image").value;
+
+    fetch("/products", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, price, image })
+    })
+    .then(() => {
+        alert("Product Added");
+        loadProducts(); // refresh list
+    });
+}
+
+</script>
+
+</body>
+</html>

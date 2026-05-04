@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Ayush",
+        "designation": "Software Engineer",
+        "department": "IT",
+        "salary": "60000",
+        "image": "https://thesavvyimg.co.uk/category/img-pathways/"
+    },
+    {
+        "name": "Rahul",
+        "designation": "Manager",
+        "department": "HR",
+        "salary": "80000",
+        "image": "https://via.placeholder.com/100"
+    }
+]

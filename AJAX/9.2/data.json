@@ -1,0 +1,12 @@
+{
+    "pune" : {
+        "temp" : "35 degC",
+        "humidity" : "50%",
+        "condition" : "Hot"
+    },
+    "delhi" : {
+        "temp" : "35 degC",
+        "humidity" : "50%",
+        "condition" : "Hot"
+    }
+}

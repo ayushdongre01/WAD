@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee App</title>
+<style>
+body { text-align:center; font-family:Arial; background:#f2f2f2; }
+button { padding:10px; margin:5px; background:black; color:white; border:none; }
+input { padding:8px; margin:5px; }
+form { margin:15px; }
+</style>
+</head>
+<body>
+
+<h1>👨‍💼 Employee Management</h1>
+
+<button onclick="location.href='/all'">View All Employees</button>
+
+<h3>Add Employee</h3>
+<form action="/add" method="POST">
+<input name="name" placeholder="Name" required>
+<input name="department" placeholder="Department" required>
+<input name="designation" placeholder="Designation" required>
+<input name="salary" placeholder="Salary" required>
+<input type="date" name="joiningDate" placeholder="Joining Date" required>
+<button type="submit">Add</button>
+</form>
+
+<h3>Update Employee</h3>
+<form action="/update" method="POST">
+<input name="oldName" placeholder="Old Name" required>
+<input name="name" placeholder="New Name">
+<input name="department" placeholder="Department">
+<input name="designation" placeholder="Designation">
+<input name="salary" placeholder="Salary">
+<input type="date" name="joiningDate" placeholder="Joining Date">
+<button type="submit">Update</button>
+</form>
+
+<h3>Delete Employee</h3>
+<input id="delName" placeholder="Name">
+<button onclick="deleteEmp()">Delete</button>
+
+<script>
+function deleteEmp(){
+    let name = document.getElementById("delName").value;
+    window.location.href = "/delete/" + name;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+body {
+    background: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Sidebar headings */
+.sidebar h5 {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #ddd;        /* light visible border */
+    border-radius: 10px;
+    background: white;             /* important */
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Badge */
+.badge-custom {
+    background: gold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.badge-custom2 {
+    background: rgb(66, 104, 8);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+/* Price */
+.price {
+    font-weight: bold;
+}
+
+.toggle-icon{
+    margin-left:160px;
+}
+
+.toggle-icon2{
+    margin-left:200px;
+}
+
+.toggle-icon3{
+    margin-left:205px;
+}

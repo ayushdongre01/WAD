@@ -1,0 +1,10 @@
+body{
+    background:#aaa6a6;
+    font-family: Arial;
+}
+
+.form-box{
+    background: #f4f4f4;
+    padding:10px 10px;
+    border-radius: 10px;
+}

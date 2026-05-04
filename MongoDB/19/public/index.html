@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student App</title>
+<style>
+body { text-align:center; font-family:Arial; background:#f2f2f2; }
+button { padding:10px; margin:5px; background:black; color:white; border:none; }
+input { padding:8px; margin:5px; }
+</style>
+</head>
+<body>
+
+<h1>📚 Student Marks System</h1>
+
+<button onclick="go('/insert')">Insert Data</button>
+<button onclick="go('/all')">Show All</button>
+<button onclick="go('/dsbda')">DSBDA > 20</button>
+<button onclick="go('/above25')">All > 25</button>
+<button onclick="go('/less40')">Less than 40</button>
+
+<br><br>
+
+<input id="name" placeholder="Student Name">
+<button onclick="update()">Update +10 Marks</button>
+
+<br><br>
+
+<input id="del" placeholder="Delete Name">
+<button onclick="del()">Delete</button>
+
+<script>
+function go(path){
+    window.location.href = path;
+}
+
+function update(){
+    let name = document.getElementById("name").value;
+    window.location.href = "/update/" + name;
+}
+
+function del(){
+    let name = document.getElementById("del").value;
+    window.location.href = "/delete/" + name;
+}
+</script>
+
+</body>
+</html>

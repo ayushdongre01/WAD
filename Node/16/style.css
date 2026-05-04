@@ -1,0 +1,21 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.card {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+img {
+    width: 150px;
+    height: 100px;
+}

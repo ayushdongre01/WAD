@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="location.href='/insert'">Insert</button>
+    <button onclick="location.href='/all'">View Table</button>
+
+    <button onclick="location.href='/morethan20'">DSBDA > 20</button>
+    <button onclick="location.href='/gtthan25'">More than 25</button>
+    <button onclick="location.href='/lsthan40'">WAD < 40 && CC < 40</button>
+    
+    <br>
+    <input type="text" placeholder="Enter name" id="name">
+    <button onclick="update()">Update WAD Marks</button>
+
+    <br>
+    <input type="text" placeholder="Enter name" id="nam">
+    <button onclick="del()">Delete entry</button>
+
+    <script>
+        function update(){
+            const name = document.getElementById('name').value;
+            location.href = "/update/"+name;
+        }
+
+        function del(){
+            const name = document.getElementById('nam').value;
+            location.href = "/del/"+name;
+        }
+    </script>
+</body>
+</html>
